@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Initialised/Assigned variables
-        storyTextView=findViewById(R.id.storyTextView);
-        storyTopButton=findViewById(R.id.buttonTop);
-        storyBottomButton=findViewById(R.id.buttonBottom);
+        storyTextView=(TextView)findViewById(R.id.storyTextView);
+        storyTopButton=(Button)findViewById(R.id.buttonTop);
+        storyBottomButton=(Button)findViewById(R.id.buttonBottom);
 
 
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         storyTopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(storyIndex==1) {
+                if(storyIndex==1 ||storyIndex==2) {
                     storyTextView.setText(R.string.T3_Story);
                     //updates the button
                     storyTopButton.setText(R.string.T3_Ans1);
@@ -51,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
         storyBottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(storyIndex==1||storyIndex==2){
+                if(storyIndex==1){
                 storyTextView.setText(R.string.T2_Story);
-                //updates the button
+                //updates the button\
+
                 storyTopButton.setText(R.string.T2_Ans1);
                 storyBottomButton.setText(R.string.T2_Ans2);
                 storyIndex=2;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     storyBottomButton.setVisibility(View.GONE);
                 }
                 else{
-                    storyTextView.setText(R.string.T4_End);
+                    storyTextView.setText(R.string.T5_End);
                     storyTopButton.setVisibility(View.GONE);
                     storyBottomButton.setVisibility(View.GONE);
                 }
